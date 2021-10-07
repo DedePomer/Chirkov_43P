@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:text="1"
+        android:textSize="20sp"
+        android:onClick="onNumberClick"
+        />
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:layout_below="@+id/b1"
+        android:text="+"
+        android:textSize="20sp"
+        android:onClick="onClicZ"
+        />
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:layout_below="@+id/b2"
+        android:text="1"
+        android:textSize="20sp"
+
+        android:onClick="onNumberClick"
+        />
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:layout_below="@+id/b3"
+        android:text="="
+        android:textSize="20sp"
+       android:onClick="onClicZ"
+        />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/b4"
+        android:hint="Тестируем"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+
+        />
+
+    <TextView
+        android:id="@+id/textTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:textAlignment="center"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+
+
+        />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:layout_below="@id/textTest"
+        android:onClick="onClicDel"
+        />
+
+
+</RelativeLayout>
