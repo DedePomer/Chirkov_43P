@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 btndelete.setOnClickListener(this);
                 params.weight = 1.0f;
                 btndelete.setLayoutParams(params);
-                btndelete.setText("УДАЛИТЬ МАКСИМА");
+                btndelete.setText("УДАЛИТЬ");
                 btndelete.setId(cursor.getInt(idIndex));
                 dbOutputRow.addView(btndelete);
 
