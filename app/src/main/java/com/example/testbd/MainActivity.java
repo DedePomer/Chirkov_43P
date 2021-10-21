@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
             int nameIndex = cursor.getColumnIndex(DBHelper.KEY_NAME);
             int genderIndex = cursor.getColumnIndex(DBHelper.KEY_GENDER);
+            int mailIndex = cursor.getColumnIndex(DBHelper.KEY_MAIL);
 
             TableLayout dbOutput = findViewById(R.id.Table);
             dbOutput.removeAllViews();
@@ -78,11 +79,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 outputName.setText(cursor.getString(nameIndex));
                 dbOutputRow.addView(outputName);
 
-                TextView outputPrice = new TextView(this);
+                TextView outputMail = new TextView(this);
                 params.weight = 3.0f;
-                outputPrice.setLayoutParams(params);
-                outputPrice.setText(cursor.getString(genderIndex));
-                dbOutputRow.addView(outputPrice);
+                outputMail.setLayoutParams(params);
+                outputMail.setText(cursor.getString(mailIndex));
+                dbOutputRow.addView(outputMail);
+
+                TextView outputGender = new TextView(this);
+                params.weight = 3.0f;
+                outputGender.setLayoutParams(params);
+                outputGender.setText(cursor.getString(genderIndex));
+                dbOutputRow.addView(outputGender);
 
                 Button btndelete = new Button(this);
                 btndelete.setOnClickListener(this);
@@ -105,15 +112,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        String name = etName.getText().toString();
-        String email = etEmail.getText().toString();
-        String gender = etGender.getText().toString();
-        contentValues = new ContentValues();
+
 
 
         switch (v.getId()) {
 
             case R.id.Add:
+                String name = etName.getText().toString();
+                String email = etEmail.getText().toString();
+                String gender = etGender.getText().toString();
+                contentValues = new ContentValues();
             contentValues.put(DBHelper.KEY_NAME, name);
             contentValues.put(DBHelper.KEY_MAIL, email);
             contentValues.put(DBHelper.KEY_GENDER, gender);
@@ -168,6 +176,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d("mLog","0 rows");
                 break;
         }
-        dbHelper.close();
+
     }
 }
